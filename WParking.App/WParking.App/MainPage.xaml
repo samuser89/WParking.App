@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WParking.App.MainPage">
+    <ContentPage.Content>
+        
+        <ScrollView HorizontalOptions="Center"
+                    VerticalOptions="Center">
+           
+            <StackLayout>
+                
+                <Label Text="¡Bienvenido a WParking!" HorizontalTextAlignment="Center" TextColor="#8210a7" FontSize="36"/>
+
+                <Label/>
+                <Label/>
+                <Label/>
+                <Label/>
+            
+                <Grid VerticalOptions="Center"
+              HorizontalOptions="Center" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250" />
+
+
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Row="0" Grid.Column="0" Text="Parking" CornerRadius="15"  x:Name="Parking"
+                    BackgroundColor="#8210a7" TextColor="WhiteSmoke"/>
+           
+            
+            <Button Grid.Row="1" Grid.Column="0" Text="Clientes" CornerRadius="15"  x:Name="Clientes"
+                    BackgroundColor="#8210a7" TextColor="WhiteSmoke"/>
+
+
+        </Grid>
+        
+    </StackLayout>
+    </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
