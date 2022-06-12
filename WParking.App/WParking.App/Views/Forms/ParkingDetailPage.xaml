@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WParking.App.Views.Forms.ParkingDetailPage"
+             xmlns:viewModels="clr-namespace:WParking.App.ViewModels.Forms">
+    
+    <ContentPage.BindingContext>
+        <viewModels:ParkingDetailViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        
+        <ScrollView>
+            <Frame Padding="50" BackgroundColor="#8210a7"  HorizontalOptions="Fill">
+                
+                <StackLayout HorizontalOptions="Fill"
+                             VerticalOptions="Center">
+                    <Label Text="Detail Parking" FontAttributes="Bold" FontSize="50" TextColor="FloralWhite"/>
+                    <Label/>
+                    <Label/>
+                    <Label/>
+                    <Label Text="Name Parking" FontAttributes="Bold" FontSize="Title" TextColor="FloralWhite"/>
+                    <Label Text="{Binding Parkings.NameParking}" TextColor="LightPink" FontSize="Subtitle"/>
+                    <Label/>
+                    <Label Text="Address Parking" FontAttributes="Bold" FontSize="Title" TextColor="FloralWhite"/>
+                    <Label Text="{Binding Parkings.AddressParking}" TextColor="LightPink" FontSize="Subtitle"/>
+                    <Label/>
+                    <Label Text="Status" FontAttributes="Bold" FontSize="Title" TextColor="FloralWhite"/>
+                    <Label Text="{Binding Parkings.StatusParking}" TextColor="LightPink" FontSize="Subtitle"/>
+                    <Label/>
+                    <Label Text="Clients" FontAttributes="Bold" FontSize="Title" TextColor="FloralWhite"/>
+                    <Label Text="{Binding Parkings.ClientId}" TextColor="LightPink" FontSize="Subtitle"/>
+               
+                </StackLayout>
+            
+        </Frame>
+        </ScrollView>
+    </ContentPage.Content>
+    
+</ContentPage>

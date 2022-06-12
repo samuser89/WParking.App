@@ -1,4 +1,5 @@
 ﻿using System;
+using WParking.App.Views.Forms;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace WParking.App
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new HomePage()); ;
         }
 
         protected override void OnStart()
