@@ -20,11 +20,10 @@
                     <DataTemplate>
                         <ViewCell >
 
-                            <Frame CornerRadius="100"
+                            <Frame CornerRadius="20"
                                    BackgroundColor="#8210a7" >
 
-                                <Grid 
-                                      HorizontalOptions="Center" >
+                                <Grid>
                                     <Grid.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding OnItemClickCommand}" />
                                     </Grid.GestureRecognizers>

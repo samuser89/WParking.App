@@ -4,7 +4,15 @@ using System.Text;
 
 namespace WParking.App.DTOs
 {
-    internal class ClientsDTO
+    public class ClientsDTO
     {
+        public int IdClient { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string email { get; set; }
+        public string Telephone { get; set; }
+        public int MembershipId { get; set; }
+        public int IdParking { get; set; }
+
     }
 }

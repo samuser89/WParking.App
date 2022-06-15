@@ -5,14 +5,46 @@
              xmlns:viewModels="clr-namespace:WParking.App.ViewModels.Forms">
     
     <ContentPage.BindingContext>
-        <viewModels:ParkingsViewModels/>
+        <viewModels:ClientsViewModels/>
     </ContentPage.BindingContext>
-    
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="20">
+            <ListView ItemsSource="{Binding Client}"
+                      HasUnevenRows="True"
+                      IsPullToRefreshEnabled="True"
+                      IsRefreshing="{Binding IsRefreshing}"
+                      RefreshCommand="{Binding RefreshCommand}">
+
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <ViewCell >
+
+                            <Frame CornerRadius="20"
+                                   BackgroundColor="#8210a7" >
+
+                                <Grid>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding OnItemClickCommand}" />
+                                    </Grid.GestureRecognizers>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Column="0" Text="{Binding FirstName}" TextColor="FloralWhite" FontSize="Title" FontAttributes="Bold"/>
+                                    <Label Grid.Column="3" Grid.Row="1" Text="{Binding MembershipId}" TextColor="BlanchedAlmond"/>
+                                    <Label Grid.Column="0" Grid.Row="1" Text="{Binding email}" TextColor="BlanchedAlmond"/>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
