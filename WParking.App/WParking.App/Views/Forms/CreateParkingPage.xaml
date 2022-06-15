@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WParking.App.Views.Forms.CreateParkingPage"
+             xmlns:viewModels="clr-namespace:WParking.App.ViewModels.Forms">
+
+<ContentPage.BindingContext>
+    <viewModels:ParkingsViewModels/>
+</ContentPage.BindingContext>
+
+<ContentPage.Content>
+
+    <ScrollView >
+            <Frame Padding="50" BackgroundColor="#8210a7"  HorizontalOptions="Fill">
+
+                <StackLayout HorizontalOptions="Fill"
+                             VerticalOptions="Center">
+                    <Label Text="Insert New Parking" FontAttributes="Bold" FontSize="35" TextColor="FloralWhite"/>
+                    <Label/>
+                    <Label/>
+                    <Label/>
+                    <Label Text="Name Parking" FontAttributes="Bold" FontSize="Title" TextColor="FloralWhite"/>
+                    <Entry Text="{Binding NameParking}" TextColor="LightPink" FontSize="Subtitle"/>
+
+                    <Label/>
+                    <Label Text="Address Parking" FontAttributes="Bold" FontSize="Title" TextColor="FloralWhite"/>
+                    <Entry Text="{Binding AddressParking}" TextColor="LightPink" FontSize="Subtitle"/>
+                    <Label/>
+                    <Label Text="Status" FontAttributes="Bold" FontSize="Title" TextColor="FloralWhite"/>
+                    <Entry Text="{Binding StatusParking}" TextColor="LightPink" FontSize="Subtitle"/>
+                    <Button Text="Save" CornerRadius="15"  x:Name="SaveParking"
+                    BackgroundColor="#8210a7" TextColor="WhiteSmoke" Command="{Binding NewParkingCommand}" />
+
+                </StackLayout>
+
+            </Frame>
+        </ScrollView>
+</ContentPage.Content>
+</ContentPage>

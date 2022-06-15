@@ -27,11 +27,12 @@ namespace WParking.App.ViewModels.Forms
 
         public Command ParkingCommand { get; set; }
         public Command ClientCommand { get; set; }
-
+   
 
         public HomePageViewModel()
         {
             this.ParkingCommand = new Command(GoToParkingPage);
+            
             this.ClientCommand = new Command(GoToClientPage);
             
         }

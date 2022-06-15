@@ -46,8 +46,13 @@ namespace WParking.App.ViewModels.Forms
         #endregion
 
         #region Methods
+
+
+
         async void Register()
         {
+            await Application.Current.MainPage.Navigation.PushAsync(new CreateParkingPage());
+
             var data = new ParkingsDTO { NameParking = this.NameParking, AddressParking = this.AddressParking,
                 StatusParking = this.StatusParking};
             var json = JsonConvert.SerializeObject(data);
@@ -72,12 +77,20 @@ namespace WParking.App.ViewModels.Forms
 
             }
         }
+
+        async void GoToCreateParkingPage()
+        {
+
+
+            await Application.Current.MainPage.Navigation.PushAsync(new CreateParkingPage());
+        }
+
         #endregion
 
         #region ViewsModels
         public CreateParkingViewModel()
         {
-            this.RegisterCommand = new Command(this.Register);
+            this.RegisterCommand = new Command(this.GoToCreateParkingPage);
         }
         #endregion
 

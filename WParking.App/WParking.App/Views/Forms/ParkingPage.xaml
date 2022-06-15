@@ -8,8 +8,13 @@
         <viewModels:ParkingsViewModels/>
     </ContentPage.BindingContext>
 
+
     <ContentPage.Content>
+
         <StackLayout Padding="20">
+            <Button Grid.Row="1" Grid.Column="0" Text="New Parking" CornerRadius="15"  x:Name="ParkingsNew"
+                    BackgroundColor="#8210a7" TextColor="WhiteSmoke" Command="{Binding RegisterCommand}"/>
+            
             <ListView ItemsSource="{Binding Parking}"
                       HasUnevenRows="True"
                       IsPullToRefreshEnabled="True"
@@ -17,6 +22,9 @@
                       RefreshCommand="{Binding RefreshCommand}">
 
                 <ListView.ItemTemplate >
+                    
+
+                    
                     <DataTemplate>
                         <ViewCell >
 
