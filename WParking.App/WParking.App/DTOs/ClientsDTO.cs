@@ -14,5 +14,7 @@ namespace WParking.App.DTOs
         public int MembershipId { get; set; }
         public int IdParking { get; set; }
 
+        public string FullName { get { return FirstName + " " + LastName; } }
+
     }
 }

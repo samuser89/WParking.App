@@ -29,8 +29,35 @@
                     <Label Text="{Binding Parkings.StatusParking}" TextColor="LightPink" FontSize="Subtitle"/>
                     <Label/>
                     <Label Text="Clients" FontAttributes="Bold" FontSize="Title" TextColor="FloralWhite"/>
-                    <Label Text="{Binding Parkings.ClientId}" TextColor="LightPink" FontSize="Subtitle"/>
-               
+                    
+                    <ListView ItemsSource="{Binding Clients}"
+                      HasUnevenRows="True"
+                      IsPullToRefreshEnabled="True"
+                      IsRefreshing="{Binding IsRefreshing}"
+                      RefreshCommand="{Binding RefreshCommand}">
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+
+                                    <Frame BackgroundColor="#8210a7">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                               <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label Grid.Column="0" 
+                                                   TextColor="LightPink"
+                                                   Text="{Binding FullName}" HorizontalTextAlignment="Start" />
+                                        </Grid>
+                                    </Frame>
+
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+                    </ListView>
+
+
                 </StackLayout>
             
         </Frame>

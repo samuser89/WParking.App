@@ -48,6 +48,7 @@ namespace WParking.App.ViewModels.Forms
             }
             this.IsRefreshing = false;
         }
+
         #endregion
 
 
