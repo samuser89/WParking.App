@@ -100,6 +100,7 @@ namespace WParking.App.ViewModels.Forms
                 AddressParking = this.AddressParking,
                 StatusParking = this.StatusParking
             };
+
             var json = JsonConvert.SerializeObject(data);
             var req = new StringContent(json, Encoding.UTF8, "application/json");
             var url = "https://62a296785bd3609cee565414.mockapi.io/api/wp/parkings";
@@ -112,12 +113,18 @@ namespace WParking.App.ViewModels.Forms
                 var statusCode = response.StatusCode;
                 result = await response.Content.ReadAsStringAsync();
 
-                if (response.IsSuccessStatusCode)
+                if ((response.IsSuccessStatusCode) && (NameParking != null) && (AddressParking != null) && (StatusParking != null))
                 {
                     var parkingDTO = JsonConvert.DeserializeObject<ParkingsDTO>(result);
                     var IdParking = parkingDTO.IdParking;
                     await Application.Current.MainPage.DisplayAlert("Notify Is Successful", $"Id Asignado: {IdParking}", "OK");
                     await Application.Current.MainPage.Navigation.PushAsync(new ParkingPage());
+                }
+                else 
+                {
+                    var parkingDTO = JsonConvert.DeserializeObject<ParkingsDTO>(result);
+                    var IdParking = parkingDTO.IdParking;
+                    await Application.Current.MainPage.DisplayAlert("Notify", $"Id Asignado: {IdParking} No fue agregado", "ok");
                 }
 
             }

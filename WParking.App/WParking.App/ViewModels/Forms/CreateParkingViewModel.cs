@@ -49,34 +49,6 @@ namespace WParking.App.ViewModels.Forms
 
 
 
-        async void Register()
-        {
-            await Application.Current.MainPage.Navigation.PushAsync(new CreateParkingPage());
-
-            var data = new ParkingsDTO { NameParking = this.NameParking, AddressParking = this.AddressParking,
-                StatusParking = this.StatusParking};
-            var json = JsonConvert.SerializeObject(data);
-            var req = new StringContent(json, Encoding.UTF8, "application/json");
-            var url = "https://62a296785bd3609cee565414.mockapi.io/api/wp/parkings";
-            var result = string.Empty;
-
-            using (var client = new HttpClient())
-            {
-                var response = await client.PostAsync(url, req);
-
-                var statusCode = response.StatusCode;
-                result = await response.Content.ReadAsStringAsync();
-
-                if (response.IsSuccessStatusCode)
-                {
-                    var parkingDTO = JsonConvert.DeserializeObject<ParkingsDTO>(result);
-                    var IdParking = parkingDTO.IdParking;
-                    await Application.Current.MainPage.DisplayAlert("Notify Is Successful", $"Id Asignado: {IdParking}" , "OK");
-                    await Application.Current.MainPage.Navigation.PushAsync(new ParkingPage());
-                }
-
-            }
-        }
 
         async void GoToCreateParkingPage()
         {
