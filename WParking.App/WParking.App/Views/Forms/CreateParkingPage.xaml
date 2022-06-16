@@ -29,7 +29,7 @@
                     <Label Text="Status" FontAttributes="Bold" FontSize="Title" TextColor="FloralWhite"/>
                     <Entry Text="{Binding StatusParking}" TextColor="LightPink" FontSize="Subtitle"/>
                     <Button Text="Save" CornerRadius="15"  x:Name="SaveParking"
-                    BackgroundColor="#8210a7" TextColor="WhiteSmoke" Command="{Binding NewParkingCommand}" />
+                    BackgroundColor="White" TextColor="#8210a7" Command="{Binding NewParkingCommand}" />
 
                 </StackLayout>
 

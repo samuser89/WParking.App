@@ -29,8 +29,33 @@
                     <Label Text="{Binding Clients.Telephone}" TextColor="LightPink" FontSize="Subtitle"/>
                     <Label/>
                     <Label Text="Membership" FontAttributes="Bold" FontSize="Title" TextColor="FloralWhite"/>
-                    <Label Text="{Binding Clients.MembershipId}" TextColor="LightPink" FontSize="Subtitle"/>
+                    
+                    <ListView ItemsSource="{Binding Memberships}"
+                      HasUnevenRows="True"
+                      IsPullToRefreshEnabled="True"
+                      IsRefreshing="{Binding IsRefreshing}"
+                      RefreshCommand="{Binding RefreshCommand}">
 
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+
+                                    <Frame BackgroundColor="#8210a7">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label Grid.Column="0" 
+                                                   TextColor="LightPink"
+                                                   Text="{Binding NameMembership}" HorizontalTextAlignment="Start" />
+                                        </Grid>
+                                    </Frame>
+
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+                    </ListView>
                 </StackLayout>
 
             </Frame>

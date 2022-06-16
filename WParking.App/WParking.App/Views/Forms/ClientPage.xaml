@@ -10,6 +10,9 @@
 
     <ContentPage.Content>
         <StackLayout Padding="20">
+            <Button Grid.Row="1" Grid.Column="0" Text="New Client" CornerRadius="15"  x:Name="ClientsNew"
+                    BackgroundColor="#8210a7" TextColor="WhiteSmoke" Command="{Binding RegisterClientCommand}"/>
+            
             <ListView ItemsSource="{Binding Client}"
                       HasUnevenRows="True"
                       IsPullToRefreshEnabled="True"
@@ -33,9 +36,8 @@
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
 
-                                    <Label Grid.Column="0" Text="{Binding FirstName}" TextColor="FloralWhite" FontSize="Title" FontAttributes="Bold"/>
-                                    <Label Grid.Column="3" Grid.Row="1" Text="{Binding MembershipId}" TextColor="BlanchedAlmond"/>
-                                    <Label Grid.Column="0" Grid.Row="1" Text="{Binding email}" TextColor="BlanchedAlmond"/>
+                                    <Label Grid.Column="0" Text="{Binding FullName}" TextColor="FloralWhite" FontSize="Title" FontAttributes="Bold"/>
+                                    <Label Grid.Column="0" Grid.Row="1" Text="{Binding Telephone}" TextColor="BlanchedAlmond"/>
                                 </Grid>
                             </Frame>
                         </ViewCell>

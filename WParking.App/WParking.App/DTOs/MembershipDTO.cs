@@ -1,10 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
+using Newtonsoft.Json;
 
 namespace WParking.App.DTOs
 {
-    internal class MembershipDTO
+    public class MembershipDTO
     {
+        [JsonProperty("id")]
+        public int Id { get; set; }
+
+        public string NameMembership { get; set; }
+        public string StatusMembership { get; set; }
     }
 }

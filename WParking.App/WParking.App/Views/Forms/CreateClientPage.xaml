@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WParking.App.Views.Forms.CreateClientPage"
+             xmlns:viewModels="clr-namespace:WParking.App.ViewModels.Forms">
+    <ContentPage.BindingContext>
+        <viewModels:ClientsViewModels/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        
+        <ScrollView>
+            
+            <Frame Padding="50" BackgroundColor="#8210a7"  HorizontalOptions="Fill">
+
+                <StackLayout HorizontalOptions="Fill"
+                             VerticalOptions="Center">
+                    <Label Text="Register New Client" FontAttributes="Bold" FontSize="35" TextColor="FloralWhite"/>
+                    <Label/>
+                    <Label/>
+                    <Label/>
+                    <Label Text="First Name" FontAttributes="Bold" FontSize="Title" TextColor="FloralWhite"/>
+                    <Entry Text="{Binding FirstName}" TextColor="LightPink" FontSize="Subtitle"/>
+                    <Label/>
+                    <Label Text="Last Name" FontAttributes="Bold" FontSize="Title" TextColor="FloralWhite"/>
+                    <Entry Text="{Binding LastName}" TextColor="LightPink" FontSize="Subtitle"/>
+                    <Label/>
+                    <Label Text="E-mail" FontAttributes="Bold" FontSize="Title" TextColor="FloralWhite"/>
+                    <Entry Text="{Binding Email}" TextColor="LightPink" FontSize="Subtitle" Keyboard="Email"/>
+                    <Label/>
+                    <Label Text="Telephone" FontAttributes="Bold" FontSize="Title" TextColor="FloralWhite"/>
+                    <Entry Text="{Binding Telephone}" TextColor="LightPink" FontSize="Subtitle" Keyboard="Telephone"/>
+                    <Label/>
+                    <Label Text="MembershipId" FontAttributes="Bold" FontSize="Title" TextColor="FloralWhite"/>
+                    <Entry Text="{Binding MembershipId}" TextColor="LightPink" FontSize="Subtitle" Keyboard="Numeric"/>
+                    <Label Text="ParkingId" FontAttributes="Bold" FontSize="Title" TextColor="FloralWhite"/>
+                    <Entry Text="{Binding IdParking}" TextColor="LightPink" FontSize="Subtitle" Keyboard="Numeric"/>
+                    <Button Text="Save" CornerRadius="15"  x:Name="SaveParking"
+                    BackgroundColor="WhiteSmoke" TextColor="#8210a7" Command="{Binding NewClientCommand}" />
+
+                </StackLayout>
+
+            </Frame>
+       
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
